@@ -1,0 +1,48 @@
+---
+const { headerTitle, styleClass } = Astro.props;
+---
+
+<header class:list={[styleClass]}>
+    <a href="/">
+        <h2>8-IFY</h2>
+    </a>
+    <h1>{headerTitle}</h1>
+    <a href="https://login.8-ify.com/?rd=https%3A%2F%2F8-ify.com%2F&rm=GET">Username</a>
+</header>
+
+<style>
+    header.explore {
+        --primary-for-style: var(--primary-explore);
+        --secondary-for-style: var(--secondary-explore);
+    }
+
+    header.create {
+        --primary-for-style: var(--primary-create);
+        --secondary-for-style: var(--secondary-create);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 2rem;
+        color: var(--primary-for-style);
+        border-bottom: 1px solid #afafaf;
+    }
+
+    h1 {
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 3rem;
+        margin: 0;
+        color: var(--secondary-for-style);
+    }
+
+    a {
+        font-size: 1.5rem;
+        color: var(--secondary-for-style);
+    }
+</style>

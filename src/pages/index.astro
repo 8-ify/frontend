@@ -1,16 +1,58 @@
 ---
-
+import DefaultLayout from "../layouts/Default.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<DefaultLayout pageMeta={{ title: "8-ify — Build your 8-bit world" }}>
+	<div class="vertical-center">
+	<h1>8-IFY</h1>
+	<div class="button-container">
+		<a href="/explore">
+			<h2 class="explore-button">EXPLORE</h2>
+		</a>
+		<a href="/create">
+			<h2 class="create-button">CREATE</h2>
+		</a>
+	</div>
+	</div>
+</DefaultLayout>
+
+<style>
+  .vertical-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+  }
+
+  div.button-container {
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+  }
+
+  h1 {
+	text-align: center;
+	margin-bottom: 1rem;
+	color: var(--primary);
+	font-size: 10rem;
+  }
+
+  h2 {
+	padding: 1rem 2rem;
+	transition: background-color 0.3s, color 0.3s;
+	font-size: 6rem;
+  }
+
+  h2.explore-button {
+	color: var(--primary-explore);
+  }
+
+  h2.create-button {
+	color: var(--primary-create);
+  }
+
+  h2:hover {
+	cursor: pointer;
+  }
+</style>

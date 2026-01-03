@@ -1,0 +1,47 @@
+---
+const { pageMeta } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageMeta.title}</title>
+    {pageMeta.meta && pageMeta.meta.map((metaObj) => <meta {...metaObj} />)}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <slot />
+    <!-- <script>
+      import("@logic/client/main.js").then((f) => f.default());
+    </script> -->
+  </body>
+</html>
+
+<style is:global>
+    :root {
+        --primary: #E68D3E;
+        --primary-explore: #3973AD;
+        --secondary-explore: #2C488F;
+        --tertiary-explore: #CDF1F4;
+        --primary-create: #B3508D;
+        --secondary-create: #6D2975;
+        --background-color: #1E1E1E;
+        --text-color: #FFFFFF;
+    }
+
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+</style>
