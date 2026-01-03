@@ -23,6 +23,7 @@ const { pageMeta } = Astro.props;
 <style is:global>
     :root {
         --primary: #E68D3E;
+        --secondary: #FFEA63;
         --primary-explore: #3973AD;
         --secondary-explore: #2C488F;
         --tertiary-explore: #CDF1F4;
@@ -32,12 +33,31 @@ const { pageMeta } = Astro.props;
         --text-color: #FFFFFF;
     }
 
+    /* Add fonts from /font/*.ttf */
+    @font-face {
+        font-family: "PressStart2P";
+        src: url("/fonts/PressStart2P.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "04B";
+        src: url("/fonts/04B_30.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body {
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        font-family: "PressStart2P", "04B", sans-serif;
         background-color: var(--background-color);
         color: var(--text-color);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        font-family: "04B", "PressStart2P", sans-serif;
     }
 
     a {
