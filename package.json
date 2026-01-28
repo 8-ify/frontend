@@ -9,6 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.6"
+    "@apollo-elements/lit-apollo": "^6.0.0",
+    "apollo-upload-client": "^19.0.0",
+    "astro": "^5.16.15",
+    "lit": "^3.3.2"
   }
 }
