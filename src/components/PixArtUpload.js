@@ -1,6 +1,6 @@
 import { ApolloMutation, html, css } from '@apollo-elements/lit-apollo';
 import { gql } from '@apollo/client/core';
-import '../logic/ApolloSetup.js';
+import '../logic/ApolloSetupOrchestrator.js';
 
 
 const UPLOAD_ASSET_MUTATION = gql`
