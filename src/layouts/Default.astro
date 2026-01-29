@@ -8,7 +8,7 @@ const { pageMeta } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageMeta.title}</title>
-    {pageMeta.meta && pageMeta.meta.map((metaObj) => <meta {...metaObj} />)}
+    {pageMeta.meta && pageMeta.meta.map((metaObj: any) => <meta {...metaObj} />)}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>

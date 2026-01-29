@@ -6,9 +6,10 @@ import HeaderContainer from "../../components/HeaderContainer.astro";
 <DefaultLayout pageMeta={{ title: "Create assets — 8-ify" }}>
 	<HeaderContainer headerTitle="CREATE" styleClass="create" />
 	<div class="filter-links">
-		<a href="/create" class="selected">8-bit Music</a>
-		<a href="/create/pixart">Pixel Art</a>
+		<a href="/create">8-bit Music</a>
+		<a href="/create/pixart" class="selected">Pixel Art</a>
 	</div>
+    <pixart-upload />
 </DefaultLayout>
 
 <style>
@@ -30,3 +31,8 @@ import HeaderContainer from "../../components/HeaderContainer.astro";
         color: var(--primary-create);
     }
 </style>
+
+<script>
+    import('../../components/UploadWidget.js');
+    import('../../components/PixArtUpload.js');
+</script>
