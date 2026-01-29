@@ -29,34 +29,26 @@ class AssetGridElement extends ApolloQuery {
     }
   `;
 
-  static get properties() {
-    return {
-      ...super.properties,
-      loading: { type: Boolean },
-      error: { type: Object },
-      data: { type: Object },
-    };
-  }
-
   constructor() {
     super();
     this.query = ASSET_QUERY;
-    this.loading = false;
-    this.error = null;
-    this.data = null;
   }
 
   render() {
+    const items = this.data?.listAssets?.items || [];
     return html`
-    <div class="content-masonry">
-        <!-- Mock to replace content -->
-        <asset-tile></asset-tile>
-        <asset-tile></asset-tile>
-        <asset-tile></asset-tile>
-        <asset-tile></asset-tile>
-        <asset-tile></asset-tile>
-        <asset-tile></asset-tile>
-    </div>
+      <div class="content-masonry">
+        ${items.map(asset => html`
+          <asset-tile
+            .imageUrl=${`https://api.8ify.capsiatech.eu/download/${asset.id}`}
+            .assetId=${asset.id}
+            .creatorId=${asset.creatorId}
+            .mimetype=${asset.mimetype}
+            .avgRating=${asset.avgRating}
+            .createdAt=${asset.createdAt}
+          ></asset-tile>
+        `)}
+      </div>
     `;
   }
 }
